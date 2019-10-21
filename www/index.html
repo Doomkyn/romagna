@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Romagna impianti APP</title>
+        <!-- DA SISTEMARE
+            <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" type="text/css" href="css/flexboxgrid.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/waves/waves.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/wow/animate.css">
+		<link rel="stylesheet" type="text/css" href="css/nativedroid2.css">
+		<link rel="stylesheet" type="text/css" href="css/nativedroid2.color.grey.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+
+	</head>
+	<body>
+
+        <!-- Login -->
+		<div data-role="page" id="login">
+
+			<div role="main" class="ui-content password text-center wow fadeIn" data-inset="false">
+                <div class="row">
+                    <div class="col-xs">
+                        <p class="small">Inserisci email e password</p>
+                        <form>
+                            <input type="text" name="email" id="email" placeholder="email" value="">
+                            <input type="password" name="password" id="password" placeholder="password" value="">
+                            <input type="checkbox" name="remember" id="remember" checked="">
+                            <label for="remember">Ricordami</label>
+                            <button id="entra" onclick="faiLogin($(this), event)">Entra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+
+        <!-- Index -->
+        <div data-role="page" id="index">
+
+        </div>
+
+        <!-- Nota -->
+        <div data-role="page" id="nota">
+
+        </div>
+
+
+        <!-- Rapportino -->
+        <div data-role="page" id="rapportino">
+
+        </div>
+        <!-- Lavorazione -->
+        <div data-role="page" id="lavorazione">
+
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="vendor/waves/waves.min.js"></script>
+        <script type="text/javascript" src="vendor/wow/wow.min.js"></script>
+        <script type="text/javascript" src="js/number.js"></script>
+        <script type="text/javascript" src="js/nativedroid2.js"></script>
+        <script type="text/javascript" src="js/nd2settings.js"></script>
+        <script type="text/javascript" src="js/moment-with-locales.js"></script>
+        <script type="text/javascript" type="text/javascript" src="js/index.js"></script>
+
+	</body>
+</html>

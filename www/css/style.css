@@ -1,0 +1,429 @@
+body {
+    background-color: #ffffff;
+}
+
+button.ui-btn.number {
+    height: 60px;
+    width: 60px;
+    border: 1px solid #222222;
+    font-size: 22px;
+}
+
+button.ui-btn.number:active, button.ui-btn.number:focus {
+    border: 1px solid #222222 !important;
+}
+
+/*password page */
+
+.password {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.password .row {
+    margin-bottom: 10px;
+}
+
+.error {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: rgb(244,67,54);
+}
+
+.small {
+    font-size: 12px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.link {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* header */
+
+.ui-header {
+    padding-top: 15px;
+}
+
+.ui-header > .ui-btn {
+    color: #222222 !important;
+    font-size: 12px;
+    line-height: 6.3em;
+    padding: 0px 5px;
+    width: auto;
+    height: 65px;
+    border-radius: 0 !important;
+    text-transform: none;
+    top: 2px
+}
+
+.ui-header > .ui-btn > i {
+    font-size: 24px;
+    vertical-align: middle;
+    margin: -2px 2px 0 0;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+    text-align: center;
+    font-size: 16px;
+}
+
+.ui-panel.ui-panel-open {
+    z-index: 9999;
+}
+
+
+/* quantity */
+
+.quantity img {
+    display: block;
+    max-width: 120px;
+    margin: 15px auto;
+}
+
+/* input */
+
+.ui-input-text:after, .ui-input-search:after {
+    display: none;
+}
+
+.ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear, .ui-input-text.ui-input-has-clear .ui-btn.ui-input-clear {
+    background-color: #dadfe1;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+    top: -3px;
+}
+
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
+    background-size: 10px;
+}
+
+.ui-input-text input, .ui-input-search input, textarea.ui-input-text.ui-textinput-autogrow {
+    border: 1px solid #dadfe1;
+    padding: 5px;
+    min-height: 40px;
+}
+
+textarea.ui-input-text.ui-textinput-autogrow {
+    min-height: 150px;
+}
+
+.ui-btn {
+    font-size: 13px;
+}
+
+.ui-btn.red-btn, .ui-btn.red-btn:active, .ui-btn.red-btn:focus, .ui-btn.red-btn:visited {
+    background-color: red;
+    color: #ffffff;
+}
+
+.ui-btn.fixed-btn {
+    position: fixed;
+    bottom: 0;
+    border-radius: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5px;
+}
+
+.ui-collapsible-inset .ui-collapsible-heading .ui-btn {
+    background-color: #dcdde1;
+}
+
+.ui-mobile label {
+    margin-bottom: 7px;
+}
+
+.ui-field-contain .ui-input-text {
+    font-size: 12px;
+}
+
+.ui-select .ui-btn, .ui-select .ui-btn:active, .ui-select .ui-btn:focus {
+    background-color: #ffffff;
+}
+
+/* number input */
+
+.number-style input{
+
+    display: inline-block;
+    width: 30px;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
+    font-size: 15px;
+    color: #000000;
+
+}
+
+.number-style span{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid #dadfe1;
+    color: #dadfe1;
+
+}
+
+.number-style span.number-minus::after{
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -1px 0 0 -5px;
+    width: 10px;
+    height: 2px;
+}
+
+.number-style span.number-plus::after{
+
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -5px;
+    width: 10px;
+    height: 2px;
+    background-color: #dadfe1;
+}
+
+.number-style span.number-plus::before{
+
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -1px;
+    width: 2px;
+    height: 10px;
+    background-color: #dadfe1;
+}
+
+.number-style span.disabled{
+    border: 2px solid #dadfe1;
+}
+
+.number-style span.disabled::after,
+.number-style span.disabled::before{
+
+    background-color: #dadfe1;
+
+}
+
+.number-style input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+.number-style input::-webkit-outer-spin-button,
+.number-style input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-style .ui-input-text {
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #dadfe1;
+}
+
+.number-style .ui-input-text:after, .number-style .ui-input-search:after {
+    display: none;
+}
+
+/* not found */
+
+.panel {
+    background-color: #222222;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+}
+
+.notfound .col-xs-12 {
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dadfe1;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #ffffff;
+}
+
+/* progress bar */
+
+@-webkit-keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+@-o-keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+.progress {
+    overflow: hidden;
+    height: 25px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-bar {
+    float: left;
+    width: 0%;
+    height: 100%;
+    font-size: 12px;
+    line-height: 25px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: width 0.6s ease;
+    -o-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+}
+.progress-striped .progress-bar,
+.progress-bar-striped {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    -o-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-bar-success {
+    background-color: #5cb85c;
+}
+.progress-striped .progress-bar-success {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-info {
+    background-color: #5bc0de;
+}
+.progress-striped .progress-bar-info {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-warning {
+    background-color: #f0ad4e;
+}
+.progress-striped .progress-bar-warning {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-danger {
+    background-color: #d9534f;
+}
+.progress-striped .progress-bar-danger {
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+
+.banner {
+    background-color: #d9534f;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.banner-ok {
+    background-color: #5cb85c;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* fixed styles */
+
+.b0 {
+    border: 0 !important;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.inline-block {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 10px;
+    border: 1px solid #dcdde1;
+    padding: 5px;
+}
+.inline-block i {
+    font-size: 38px;
+}
+
+.inline-block img {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+}
+
+.medium {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.ui-slider-track, .ui-page-theme-a .ui-slider-track .ui-btn-active {
+    height: 10px;
+}
+
+.ui-page-theme-a .ui-bar-inherit {
+    background-color: #ffffff;
+}
