@@ -31,7 +31,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-
         pictureSource = navigator.camera.PictureSourceType;
         destinationType = navigator.camera.DestinationType;
         //vengono assegnate delle azioni al send ed al complete di ogni chiamata ajax (lo faccio qui per non doverlo fare in tutte le chiamate)
