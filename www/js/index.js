@@ -357,46 +357,50 @@ function salvaReport(cell, processing, e) {
         showToast('Attenzione, non hai una connessione ad internet attiva', true, "short");
         return;
     }
-    $form = $('form');
-    formData = $form.serializeArray();
-    formData.push({name: "processing", value: processing});
-    formData.push({name: "cell", value: cell});
-    $.ajax({
-        showLoadingSpinner: true,
-        url: baseApi+"report/save",
-        type: 'POST',
-        data: formData,
-        // Fetch the stored token from localStorage and set in the header
-        headers: {"Authorization": 'Bearer '+ token},
-        dataType: "json",
-        success: function(data) {
-            //torno alla pagina delle lavorazioni
-            showToast('Dati rapportino salvati con successo', false, "short");
-            $.mobile.navigate('#index');
-        },  //fine success
-        error: function(xhr, status, error) {
-            if (xhr.status !== 403) { // utente non abilitato
-
-                showToast('Correggi gli errori e riprova', true, "short");
-                focus = true;
-                $.each(JSON.parse(xhr.responseJSON.errors), function(i, error) {
-                    if (i.indexOf('.') != -1) // è un input tipo array, devo riformattare il nome
-                    {
-                        key = i.split('.')[0]+"["+i.split('.')[1]+"]";
-                    } else {
-                        key = i;
-                    }
-                    $input = $form.find("[name='"+key+"']");
-                    $input.closest('div').before('<span class="error">'+error[0]+'</span>');
-                    if (focus) {
-                        $input.closest('[data-role=collapsible]').collapsible('expand');
-                        $input.focus();
-                        focus = false;
-                    }
-                });
+    if (confirm("Ricordati di inserire le quantit\xE0 lavorate e di far firmare il foglio delle lavorazioni extra se necessario")) {
+        $form = $('form');
+        formData = $form.serializeArray();
+        formData.push({name: "processing", value: processing});
+        formData.push({name: "cell", value: cell});
+        $.ajax({
+            showLoadingSpinner: true,
+            url: baseApi+"report/save",
+            type: 'POST',
+            data: formData,
+            // Fetch the stored token from localStorage and set in the header
+            headers: {"Authorization": 'Bearer '+ token},
+            dataType: "json",
+            success: function(data) {
+                //torno alla pagina delle lavorazioni
+                showToast('Dati rapportino salvati con successo', false, "short");
+                $.mobile.navigate('#index');
+            },  //fine success
+            error: function(xhr, status, error) {
+                if (xhr.status !== 403) { // utente non abilitato
+    
+                    showToast('Correggi gli errori e riprova', true, "short");
+                    focus = true;
+                    $.each(JSON.parse(xhr.responseJSON.errors), function(i, error) {
+                        if (i.indexOf('.') != -1) // è un input tipo array, devo riformattare il nome
+                        {
+                            key = i.split('.')[0]+"["+i.split('.')[1]+"]";
+                        } else {
+                            key = i;
+                        }
+                        $input = $form.find("[name='"+key+"']");
+                        $input.closest('div').before('<span class="error">'+error[0]+'</span>');
+                        if (focus) {
+                            $input.closest('[data-role=collapsible]').collapsible('expand');
+                            $input.focus();
+                            focus = false;
+                        }
+                    });
+                }
             }
-        }
-    });
+        });
+    } else {
+        return;
+    }
 }
 function creaPagina($page, html, callback) { //funzione che carica html ricevuto dall'api dentro il rispettivo div
     if (initializedPages.indexOf($page.attr('id')) != -1) { //se la pagina è già stata inizializzata in precedenza devo distruggerla per poi reinizializzarla
