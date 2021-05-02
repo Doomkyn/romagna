@@ -42,5 +42,8 @@
       "ios",
       "android"
     ]
+  },
+  "devDependencies": {
+    "cordova-plugin-browsersync": "^1.1.0"
   }
 }

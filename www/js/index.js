@@ -212,6 +212,57 @@ function salvaNota(processing) {
         }
     });
 }
+
+function paginaPermessi() {
+    if (!connected()) {
+        showToast('Attenzione, non hai una connessione ad internet attiva', true, "short");
+        return;
+    }
+    $.ajax({
+        showLoadingSpinner: true,
+        url: baseApi+"permits",
+        type: 'POST',
+        // Fetch the stored token from localStorage and set in the header
+        headers: {"Authorization": 'Bearer '+ token},
+        dataType: "json",
+        success: function(data) {
+            creaPagina($('#permessi'), data.rendered); //passo l'id del div che devo popolare e l'html restituito dall'api
+        },  //fine success
+        error: function(xhr, status, error) {
+        }
+    });
+}
+function richiediPermesso() {
+    $('.error').remove();
+    if (!connected()) {
+        showToast('Attenzione, non hai una connessione ad internet attiva', true, "short");
+        return;
+    }
+    $.ajax({
+        showLoadingSpinner: true,
+        url: baseApi+"permits/request",
+        type: 'POST',
+        data: { 
+            date: $('[name=year]').val() + "-" + $('[name=month]').val() + "-" + $('[name=day]').val(), 
+        },
+        // Fetch the stored token from localStorage and set in the header
+        headers: { "Authorization": 'Bearer '+ token },
+        dataType: "json",
+        success: function(data) {
+            //torno alla pagina delle lavorazioni
+            showToast('Richiesta inviata', false, "short");
+            $.mobile.navigate('#index');
+        },  //fine success
+        error: function(xhr, status, error) {
+            if (xhr.status !== 403) {
+                showToast('Correggi gli errori e riprova', true, "short");
+                $.each(JSON.parse(xhr.responseJSON.errors), function(i, error) {
+                    $('[name=year]').after('<span class="error">'+error+'</span>');
+                });
+            }
+        }
+    });
+}
 function paginaRapportino(cell, processing) {
     if (!connected()) {
         showToast('Attenzione, non hai una connessione ad internet attiva', true, "short");
