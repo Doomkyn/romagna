@@ -413,6 +413,9 @@ function salvaReport(cell, processing, e) {
         formData = $form.serializeArray();
         formData.push({name: "processing", value: processing});
         formData.push({name: "cell", value: cell});
+        formData.push({name: "text", value: $('textarea').val()});
+        formData.push({name: "image", value: $('#preview').attr('src')});
+        console.log(formData);
         $.ajax({
             showLoadingSpinner: true,
             url: baseApi+"report/save",
@@ -488,7 +491,7 @@ function onFail(message) {
 var photoUpload = {
     camera: function() {
         navigator.camera.getPicture(onCapturePhoto, onFail, {
-            quality: 100, // photo quality
+            quality: 50, // photo quality
             destinationType: destinationType.FILE_URI,
             sourceType: Camera.PictureSourceType.CAMERA,
             encodingType: Camera.EncodingType.JPEG
@@ -496,7 +499,7 @@ var photoUpload = {
     },
     gallery: function() {
         navigator.camera.getPicture(onCapturePhoto, onFail, {
-            quality: 100,
+            quality: 50,
             destinationType: destinationType.FILE_URI,
             sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
             encodingType: Camera.EncodingType.JPEG
