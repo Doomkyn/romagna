@@ -16,6 +16,19 @@ var app = {
             $form.find("#password").val(password);
             $form.find("#email").val(email);
         }
+        $.ajax({
+            showLoadingSpinner: true,
+            url: "https://romagnaimpianti.wp-demo.eu/api/businesses",
+            type: 'POST',
+            dataType: "json",
+            success: function (data, status){ //status 200 
+                alert(JSON.stringify(data));
+            },
+            error: function (error) {
+
+                alert(JSON.stringify(error));
+            }
+        });
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         document.addEventListener("offline", onOffline, false);
         document.addEventListener("online", onOnline, false);
