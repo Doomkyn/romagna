@@ -1,5 +1,5 @@
 //const baseApi = 'http://romagna.lan/api/';
-const baseApi = 'https://romagnaimpianti.wp-demo.eu/api/';
+let baseApi = "";
 const directionsApi = 'https://api.openrouteservice.org/';
 var initializedPages = [];
 var pictureSource;
@@ -11,6 +11,7 @@ var app = {
         remember = window.localStorage.getItem("remember");
         email = window.localStorage.getItem("email");
         password = window.localStorage.getItem("password");
+        sede = window.localStorage.getItem("sede");
         $form = $("#login").find('form');
         if (remember) {
             $form.find("#password").val(password);
@@ -22,11 +23,15 @@ var app = {
             type: 'POST',
             dataType: "json",
             success: function (data, status){ //status 200 
-                alert(JSON.stringify(data));
+                $.each(data, function(index, item) {
+                    $('#sede').append('<option value="'+item.id+'" data-url="'+item.url+'">'+item.name+'</option>');
+                });
+                if (remember) {
+                    $("#sede option[value='"+sede+"']").prop('selected', true).trigger("change");
+                }
             },
             error: function (error) {
-
-                alert(JSON.stringify(error));
+                console.log(error);
             }
         });
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -109,6 +114,12 @@ function faiLogin($element, e){
     }
     $form = $element.closest('form');
     $form.find('.error').remove();
+    if (!$form.find('#sede option:selected').val()) {
+        $element.after('<span class="error">Scegli la sede.</span>');
+        return;
+    }
+    sede = $form.find('#sede option:selected').val();
+    baseApi = $form.find('#sede option:selected').data('url')+'/api/';
     $.ajax({
         showLoadingSpinner: true,
         url: baseApi+"login",
@@ -124,6 +135,7 @@ function faiLogin($element, e){
                 if (remember) {
                     window.localStorage.setItem("email", email);
                     window.localStorage.setItem("password", password);
+                    window.localStorage.setItem("sede", sede);
                 } else {
                     window.localStorage.removeItem("email");
                     window.localStorage.removeItem("password");
