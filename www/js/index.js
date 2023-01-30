@@ -173,7 +173,8 @@ function richiediLavorazioni(data){
         showLoadingSpinner: true,
         url: baseApi+"processings",
         type: 'POST',
-        data: { date: formatted },
+        data: { date: formatted, 
+                sede: "simpleSedeTest"  },
         // Fetch the stored token from localStorage and set in the header
         headers: {"Authorization": 'Bearer '+ token},
         dataType: "json",
